@@ -1,0 +1,7 @@
+{"level":"INFO","time":"2024-03-14T15:16:29.559+0800","caller":"login/login.go:25","msg":"验证码生成成功 info。"}
+{"level":"INFO","time":"2024-03-14T15:16:30.262+0800","caller":"login/login.go:25","msg":"验证码生成成功 info。"}
+{"level":"INFO","time":"2024-03-14T15:16:30.447+0800","caller":"login/login.go:25","msg":"验证码生成成功 info。"}
+{"level":"INFO","time":"2024-03-14T15:23:15.643+0800","caller":"login/login.go:27","msg":"验证码生成成功 info。"}
+{"level":"INFO","time":"2024-03-14T15:23:17.178+0800","caller":"login/login.go:27","msg":"验证码生成成功 info。"}
+{"level":"INFO","time":"2024-03-14T15:46:28.933+0800","caller":"login/login.go:35","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-14T16:50:35.598+0800","caller":"login/login.go:36","msg":"验证码生成成功"}

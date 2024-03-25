@@ -1,0 +1,17 @@
+info:
+  contact:
+    name: 戈亓
+  description: 信息资源管理系统后端
+  title: 接口文档
+  version: "1.0"
+paths:
+  /project/login/getCaptcha:
+    get:
+      description: 获取验证码接口
+      produces:
+      - application/json
+      responses: {}
+      summary: 获取验证码
+      tags:
+      - Login
+swagger: "2.0"

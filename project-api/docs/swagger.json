@@ -1,0 +1,26 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "信息资源管理系统后端",
+        "title": "接口文档",
+        "contact": {
+            "name": "戈亓"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/project/login/getCaptcha": {
+            "get": {
+                "description": "获取验证码接口",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Login"
+                ],
+                "summary": "获取验证码",
+                "responses": {}
+            }
+        }
+    }
+}

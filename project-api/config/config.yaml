@@ -1,0 +1,23 @@
+zap:
+  debugFileName: "./logs/debug/project-debug.log"
+  infoFileName: "./logs/info/project-info.log"
+  warnFileName: "./logs/error/project-error.log"
+  maxSize: 500,
+  maxAge: 28,
+  MaxBackups: 3
+redis:
+  host: "82.157.190.38"
+  port: 6379
+  password: ""
+  db: 0
+mysql:
+  host: "82.157.190.38"
+  port: 3306
+  username: "root"
+  password: "123456"
+  db: "dbname"
+grpc:
+  addr: "127.0.0.1:8881"
+  name: "user"
+  version: "1.0.0"
+  weight: 2
