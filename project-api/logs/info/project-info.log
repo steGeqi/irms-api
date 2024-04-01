@@ -5,3 +5,17 @@
 {"level":"INFO","time":"2024-03-14T15:23:17.178+0800","caller":"login/login.go:27","msg":"验证码生成成功 info。"}
 {"level":"INFO","time":"2024-03-14T15:46:28.933+0800","caller":"login/login.go:35","msg":"验证码生成成功"}
 {"level":"INFO","time":"2024-03-14T16:50:35.598+0800","caller":"login/login.go:36","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T13:13:46.331+0800","caller":"login/login.go:36","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T13:18:54.671+0800","caller":"login/login.go:36","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T13:19:06.453+0800","caller":"login/login.go:36","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T13:50:31.552+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:00:41.278+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:04:35.096+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:06:22.943+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:07:48.402+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:08:54.786+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:17:22.833+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:17:24.559+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:17:25.973+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:17:53.147+0800","caller":"login/login.go:39","msg":"验证码生成成功"}
+{"level":"INFO","time":"2024-03-26T14:17:54.414+0800","caller":"login/login.go:39","msg":"验证码生成成功"}

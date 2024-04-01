@@ -1,15 +1,12 @@
 package login
 
 import (
-	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 	"irms-api.com/project-api/pkg/dao"
 	"irms-api.com/project-api/pkg/repo"
+	"irms-api.com/project-api/pkg/service"
 	project_common "irms-api.com/project-common"
-	"log"
-	"time"
 )
 
 type HandleLogin struct {
@@ -31,17 +28,18 @@ func New() *HandleLogin {
 // @Router			/project/login/getCaptcha [get]
 func (hl *HandleLogin) GetCaptcha(ctx *gin.Context) {
 	result := &project_common.Result{}
-	code := "123456"
-	go func() {
-		zap.L().Info("验证码生成成功")
-		c, concel := context.WithTimeout(context.Background(), 2*time.Second)
-		defer concel()
-		err := hl.cache.Put(c, "验证码", code, 15*time.Second)
-		if err != nil {
-			log.Println("验证码存入redis错误,cause by:", err)
-		}
-	}()
-	ctx.JSON(200, result.Success(code))
+	Captcha := &service.GetCap{}
+	data := Captcha.GetCaptcha()
+	//go func() {
+	//	zap.L().Info("验证码生成成功")
+	//	c, concel := context.WithTimeout(context.Background(), 2*time.Second)
+	//	defer concel()
+	//	err := hl.cache.Put(c, "验证码Id", "dd", 15*time.Second)
+	//	if err != nil {
+	//		log.Println("验证码存入redis错误,cause by:", err)
+	//	}
+	//}()
+	ctx.JSON(200, result.Success(data))
 }
 
 // @Summary 登录
@@ -52,6 +50,7 @@ func (hl *HandleLogin) GetCaptcha(ctx *gin.Context) {
 // @Router /project/login/login
 func (hl *HandleLogin) Login(ctx *gin.Context) {
 	result := project_common.Result{}
+
 	username := ctx.Query("username")
 	password := ctx.Query("password")
 	fmt.Println(username, password)

@@ -1,0 +1,2 @@
+# irms-api.com/project-api/api/login
+api\login\router.go:14:4: g.G undefined (type *gin.RouterGroup has no field or method G)

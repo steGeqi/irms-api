@@ -1,3 +1,6 @@
+server:
+  name: "irms-api"
+  addr: ":8080"
 zap:
   debugFileName: "./logs/debug/project-debug.log"
   infoFileName: "./logs/info/project-info.log"

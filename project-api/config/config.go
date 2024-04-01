@@ -85,8 +85,6 @@ func (c *Config) ReadGrpcConfig() {
 	c.GC = gc
 }
 
-// 链接Mysql数据库
-
 type MysqlConfig struct {
 	Username string
 	Password string
