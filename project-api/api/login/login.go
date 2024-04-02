@@ -6,6 +6,7 @@ import (
 	"irms-api.com/project-api/pkg/dao"
 	"irms-api.com/project-api/pkg/repo"
 	"irms-api.com/project-api/pkg/service"
+	"irms-api.com/project-api/pkg/service/login"
 	project_common "irms-api.com/project-common"
 )
 
@@ -20,12 +21,12 @@ func New() *HandleLogin {
 }
 
 // @Summary		获取验证码
-// @title			获取title
+// @title		获取title
 // @version		1.0
-// @Tags			Login
+// @Tags		Login
 // @description	获取验证码接口
 // @Produce		json
-// @Router			/project/login/getCaptcha [get]
+// @Router		/project/login/getCaptcha [get]
 func (hl *HandleLogin) GetCaptcha(ctx *gin.Context) {
 	result := &project_common.Result{}
 	Captcha := &service.GetCap{}
@@ -50,9 +51,15 @@ func (hl *HandleLogin) GetCaptcha(ctx *gin.Context) {
 // @Router /project/login/login
 func (hl *HandleLogin) Login(ctx *gin.Context) {
 	result := project_common.Result{}
-
 	username := ctx.Query("username")
 	password := ctx.Query("password")
-	fmt.Println(username, password)
-	ctx.JSON(200, result.Success(username))
+	captchaId := ctx.Query("captchaId")
+	reCode := ctx.Query("reCode")
+	fmt.Println(username, password, captchaId, reCode)
+	resu := login.LoginService(username, password, captchaId, reCode)
+	if resu != true {
+		ctx.JSON(200, result.Fail(203, "验证码错误"))
+	}
+	//fmt.Println(result)
+	//ctx.JSON(200, result.Success(resu))
 }

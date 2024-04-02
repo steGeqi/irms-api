@@ -29,6 +29,6 @@ func (g *GetCap) GetCaptcha() (res interface{}) {
 
 }
 
-func (g *GetCap) VerifyCaptcha(id, retCaptcha string) bool {
-	return store.Verify(id, retCaptcha, true)
+func (g *GetCap) VerifyCaptcha(captchaId, reCode string) bool {
+	return store.Verify(captchaId, reCode, true)
 }
