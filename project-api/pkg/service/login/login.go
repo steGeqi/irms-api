@@ -13,10 +13,9 @@ func LoginService(username, password, captchaId, reCode string) bool {
 	//r := Result{}
 	Verify := &service.GetCap{}
 	result := Verify.VerifyCaptcha(captchaId, reCode)
-	if result != true {
-		//r.Status = false
-		//r.Msg = "验证码错误"
+	if result == false {
 		return result
+	} else {
+		return true
 	}
-	return true
 }

@@ -1,7 +1,6 @@
 package login
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"irms-api.com/project-api/pkg/dao"
 	"irms-api.com/project-api/pkg/repo"
@@ -51,15 +50,15 @@ func (hl *HandleLogin) GetCaptcha(ctx *gin.Context) {
 // @Router /project/login/login
 func (hl *HandleLogin) Login(ctx *gin.Context) {
 	result := project_common.Result{}
+	data := project_common.Data{}
 	username := ctx.Query("username")
 	password := ctx.Query("password")
 	captchaId := ctx.Query("captchaId")
 	reCode := ctx.Query("reCode")
-	fmt.Println(username, password, captchaId, reCode)
 	resu := login.LoginService(username, password, captchaId, reCode)
-	if resu != true {
-		ctx.JSON(200, result.Fail(203, "验证码错误"))
+	if resu == false {
+		ctx.JSON(200, result.Success(data.BackData(2001, "验证码错误")))
+	} else {
+		ctx.JSON(200, result.Success("success"))
 	}
-	//fmt.Println(result)
-	//ctx.JSON(200, result.Success(resu))
 }
