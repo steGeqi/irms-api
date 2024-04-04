@@ -6,6 +6,7 @@ type Result struct {
 	Msg  string       `json:"msg"`
 	Data any          `json:"data"`
 }
+
 type Data struct {
 	Code BusinessCode `json:"code"`
 	Msg  string       `json:"msg"`
