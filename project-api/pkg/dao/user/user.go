@@ -1,6 +1,7 @@
 package user
 
 import (
+	gorms "irms-api.com/project-api/pkg/dao/gorm"
 	"time"
 )
 
@@ -14,6 +15,10 @@ type User struct {
 	Password   string    `json:"password"`
 }
 
-func (u *User) Login(username, password string) bool {
+func (u *User) VerifyIdentity(username, password string) bool {
 	return false
+}
+
+type MemberDao struct {
+	conn *gorms.GormConn
 }

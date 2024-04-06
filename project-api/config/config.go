@@ -42,6 +42,7 @@ func InitConfig() *Config {
 	conf.ReadServerConfig()
 	conf.InitZaplog()
 	conf.ReadGrpcConfig()
+	conf.InitMysqlConfig()
 	return conf
 }
 

@@ -1,6 +1,6 @@
 server:
   name: "irms-api"
-  addr: ":8080"
+  addr: ":1015"
 zap:
   debugFileName: "./logs/debug/project-debug.log"
   infoFileName: "./logs/info/project-info.log"
@@ -15,10 +15,10 @@ redis:
   db: 0
 mysql:
   host: "82.157.190.38"
-  port: 3306
+  port: 3307
   username: "root"
   password: "123456"
-  db: "dbname"
+  db: "irms1"
 grpc:
   addr: "127.0.0.1:8881"
   name: "user"

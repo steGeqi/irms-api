@@ -10,12 +10,12 @@ type Result struct {
 }
 
 func LoginService(username, password, captchaId, reCode string) bool {
-
 	Verify := &service.GetCap{}
 	result := Verify.VerifyCaptcha(captchaId, reCode)
 	if result == false {
 		return result
 	} else {
+		
 		return true
 	}
 }
