@@ -55,10 +55,11 @@ func (hl *HandleLogin) Login(ctx *gin.Context) {
 	password := ctx.Query("password")
 	captchaId := ctx.Query("captchaId")
 	reCode := ctx.Query("reCode")
-	resu := login.LoginService(username, password, captchaId, reCode)
-	if resu == false {
-		ctx.JSON(200, result.Success(data.BackData(2001, "验证码错误")))
+	codeVerify, msg := login.LoginService(username, password, captchaId, reCode)
+	if codeVerify != true {
+		ctx.JSON(200, result.Success(data.BackData(2001, msg)))
 	} else {
-		ctx.JSON(200, result.Success("success"))
+		//results := login.LoginService(username, password, captchaId, reCode)
+		ctx.JSON(200, result.Success(msg))
 	}
 }

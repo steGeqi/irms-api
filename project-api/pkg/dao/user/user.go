@@ -1,24 +1,33 @@
-package user
+package dao
 
 import (
-	gorms "irms-api.com/project-api/pkg/dao/gorm"
-	"time"
+	"fmt"
+	//"fmt"
+	"irms-api.com/project-api/pkg/dao/gorms"
+	"irms-api.com/project-api/pkg/model"
 )
 
-// 还有几个字段后续再补
-type User struct {
-	Id         string    `json:"id"`
-	GroupId    string    `json:"groupid"`
-	InsertDate time.Time `json:"insertdate"`
-	UserName   string    `json:"username"`
-	RealName   string    `json:"realname"`
-	Password   string    `json:"password"`
+//type UserDao interface {
+//	CreateUser(ctx context.Context, user *model.User) error
+//}
+
+type UserDao struct {
+	//conn *gorms.GormConn
 }
 
-func (u *User) VerifyIdentity(username, password string) bool {
-	return false
-}
-
-type MemberDao struct {
-	conn *gorms.GormConn
+//	func NewUserDao() *UserDao {
+//		return &UserDao{
+//			conn: gorms.New(),
+//		}
+//	}
+func (u UserDao) VerifyUser(username, password string) bool {
+	var userList model.User
+	dao.DB.Where("username = ?", username).First(&userList)
+	fmt.Println(userList.Password)
+	if userList.Password == password {
+		return true
+	} else {
+		return false
+	}
+	//return false
 }

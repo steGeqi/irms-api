@@ -1,7 +1,6 @@
-package gorms
+package dao
 
 import (
-	"context"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -9,7 +8,7 @@ import (
 	"irms-api.com/project-api/config"
 )
 
-var _db *gorm.DB
+var DB *gorm.DB
 
 func init() {
 	//配置MySQL连接参数
@@ -20,7 +19,7 @@ func init() {
 	Dbname := config.AppConf.MysqlConfig.Db         //数据库名
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local", username, password, host, port, Dbname)
 	var err error
-	_db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
+	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {
@@ -28,17 +27,17 @@ func init() {
 	}
 }
 
-func GetDB() *gorm.DB {
-	return _db
-}
-
-type GormConn struct {
-	DB *gorm.DB
-}
-
-func New() *GormConn {
-	return &GormConn{DB: GetDB()}
-}
-func (g *GormConn) Default(ctx context.Context) *gorm.DB {
-	return g.DB.Session(&gorm.Session{Context: ctx})
-}
+//func GetDB() *gorm.DB {
+//	return _db
+//}
+//
+//type GormConn struct {
+//	DB *gorm.DB
+//}
+//
+//func New() *GormConn {
+//	return &GormConn{DB: GetDB()}
+//}
+//func (g *GormConn) Default(ctx context.Context) *gorm.DB {
+//	return g.DB.Session(&gorm.Session{Context: ctx})
+//}
